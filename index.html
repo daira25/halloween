@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Web | Noche de Terror</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="niebla niebla1"></div>
+    <div class="niebla niebla2"></div>
+
+    <div class="murcielagos">🦇 🦇 🦇</div>
+
+    <header>
+        <nav class="navbar">
+            <h2>🎃 Halloween Web</h2>
+
+            <div class="menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#historias">Historias</a>
+                <a href="#leyendas">Leyendas</a>
+                <a href="#curiosidades">Curiosidades</a>
+                <a href="#juego">Juego</a>
+            </div>
+
+            <button id="sonidoBtn" onclick="activarSonido()">
+                🔊 Sonido
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio" class="hero">
+
+            <div class="luna">🌕</div>
+
+            <div class="contenido-hero">
+                <p class="subtitulo">BIENVENIDOS A LA NOCHE MÁS TERRORÍFICA</p>
+
+                <h1>HALLOWEEN</h1>
+
+                <h2>¿Te atreves a entrar?</h2>
+
+                <p>
+                    Historias misteriosas, leyendas oscuras,
+                    criaturas fantásticas y secretos escondidos
+                    en la noche.
+                </p>
+
+                <a href="#historias" class="boton">
+                    👻 Descubrir historias
+                </a>
+            </div>
+
+            <div class="decoracion">
+                🎃 👻 🕷️ 🎃
+            </div>
+
+        </section>
+
+        <!-- HISTORIAS -->
+        <section id="historias" class="seccion">
+
+            <h2>📖 Historias de Terror</h2>
+
+            <p class="descripcion">
+                Descubrí relatos misteriosos que te harán
+                imaginar lo desconocido.
+            </p>
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+                    <div class="imagen">🏚️</div>
+                    <h3>La casa abandonada</h3>
+                    <p>
+                        Una antigua casa escondía un secreto
+                        que nadie se atrevía a descubrir.
+                    </p>
+                    <button onclick="mostrarHistoria(1)">
+                        Leer historia
+                    </button>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="imagen">🪞</div>
+                    <h3>El espejo misterioso</h3>
+                    <p>
+                        Un espejo antiguo reflejaba cosas
+                        que no estaban en la habitación.
+                    </p>
+                    <button onclick="mostrarHistoria(2)">
+                        Leer historia
+                    </button>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="imagen">🎃</div>
+                    <h3>La calabaza encantada</h3>
+                    <p>
+                        Una calabaza iluminada aparecía
+                        cada noche en el mismo lugar.
+                    </p>
+                    <button onclick="mostrarHistoria(3)">
+                        Leer historia
+                    </button>
+                </article>
+
+            </div>
+
+            <div id="historiaTexto" class="historia-texto">
+                Seleccioná una historia para descubrir su misterio...
+            </div>
+
+        </section>
+
+        <!-- LEYENDAS -->
+        <section id="leyendas" class="seccion leyendas">
+
+            <h2>🧙 Leyendas de Halloween</h2>
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+                    <div class="imagen">🧟</div>
+                    <h3>Los zombies</h3>
+                    <p>
+                        Son criaturas fantásticas que aparecen
+                        en historias de terror y películas.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="imagen">👻</div>
+                    <h3>Los fantasmas</h3>
+                    <p>
+                        Según las leyendas, son espíritus
+                        que permanecen en lugares misteriosos.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="imagen">🧛</div>
+                    <h3>Los vampiros</h3>
+                    <p>
+                        Criaturas legendarias de la noche
+                        que aparecen en cuentos populares.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CURIOSIDADES -->
+        <section id="curiosidades" class="seccion">
+
+            <h2>🔮 Curiosidades de Halloween</h2>
+
+            <div class="curiosidad">
+                <span>🎃</span>
+                <p>
+                    Las calabazas talladas son uno de los
+                    símbolos más conocidos de Halloween.
+                </p>
+            </div>
+
+            <div class="curiosidad">
+                <span>🦇</span>
+                <p>
+                    Los murciélagos se relacionan con
+                    historias de misterio y criaturas nocturnas.
+                </p>
+            </div>
+
+            <div class="curiosidad">
+                <span>🍬</span>
+                <p>
+                    En muchos lugares los niños se disfrazan
+                    y salen a pedir dulces.
+                </p>
+            </div>
+
+            <button onclick="nuevaCuriosidad()">
+                ✨ Otra curiosidad
+            </button>
+
+            <p id="curiosidadExtra" class="curiosidad-extra"></p>
+
+        </section>
+
+        <!-- JUEGO -->
+        <section id="juego" class="seccion juego">
+
+            <h2>🎮 Desafío de Halloween</h2>
+
+            <p>
+                Demostrá cuánto sabés sobre Halloween.
+                ¡Respondé correctamente y sumá puntos!
+            </p>
+
+            <div class="caja-juego">
+
+                <h3 id="pregunta">Pregunta</h3>
+
+                <div id="opciones" class="opciones"></div>
+
+                <p id="resultado"></p>
+
+                <p id="puntaje">Puntaje: 0</p>
+
+                <button id="siguiente" onclick="siguientePregunta()">
+                    Siguiente pregunta
+                </button>
+
+                <button onclick="reiniciarJuego()">
+                    🔄 Reiniciar juego
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- FINAL -->
+        <section class="final">
+            <h2>🎃 ¡Feliz Halloween! 👻</h2>
+            <p>
+                Gracias por visitar nuestro mundo de misterio.
+                ¡Que tengas una noche llena de sorpresas!
+            </p>
+            <span>🕸️ 🦇 🕷️ 🕸️</span>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Halloween Web © 2026</p>
+        <p>Proyecto educativo - Laboratorio de Aplicaciones II</p>
+        <p>Desarrollado con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

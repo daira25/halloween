@@ -1,0 +1,463 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;500;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #10091c;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* BARRA DE NAVEGACION */
+
+header {
+    background: rgba(10, 5, 20, 0.95);
+    padding: 18px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #ff7518;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar h2 {
+    color: #ff7518;
+    font-family: 'Creepster', cursive;
+    font-size: 30px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff7518;
+}
+
+button, .boton {
+    background: linear-gradient(45deg, #ff7518, #a020f0);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+button:hover, .boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #ff7518;
+}
+
+/* PORTADA */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+    background:
+        radial-gradient(circle at 80% 20%, #54206e, transparent 35%),
+        linear-gradient(135deg, #10091c, #28103c, #080611);
+}
+
+.contenido-hero {
+    max-width: 750px;
+    z-index: 2;
+}
+
+.subtitulo {
+    color: #ffae42;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Creepster', cursive;
+    font-size: clamp(65px, 12vw, 125px);
+    color: #ff7518;
+    text-shadow: 5px 5px #591b7c, 0 0 30px #ff7518;
+    animation: aparecer 2s infinite alternate;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin: 15px;
+}
+
+.hero p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.luna {
+    position: absolute;
+    top: 50px;
+    right: 12%;
+    font-size: 90px;
+    animation: flotar 4s infinite ease-in-out;
+}
+
+.decoracion {
+    font-size: 55px;
+    margin-top: 40px;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+/* MURCIELAGOS */
+
+.murcielagos {
+    position: fixed;
+    top: 120px;
+    left: -150px;
+    font-size: 35px;
+    z-index: 10;
+    pointer-events: none;
+    animation: volar 18s linear infinite;
+}
+
+/* NIEBLA */
+
+.niebla {
+    position: fixed;
+    width: 200%;
+    height: 150px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(190, 180, 220, 0.08),
+        transparent
+    );
+    filter: blur(25px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.niebla1 {
+    bottom: 10%;
+    left: -100%;
+    animation: nieblaMover 20s linear infinite;
+}
+
+.niebla2 {
+    bottom: 30%;
+    left: -100%;
+    animation: nieblaMover 30s linear infinite;
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.seccion h2 {
+    font-family: 'Creepster', cursive;
+    font-size: 48px;
+    color: #ff7518;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    color: #c9bdd9;
+    margin-bottom: 40px;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.tarjeta {
+    background: linear-gradient(145deg, #28163d, #160d24);
+    border: 1px solid #74349a;
+    border-radius: 20px;
+    padding: 28px 20px;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.tarjeta:hover {
+    transform: translateY(-12px);
+    border-color: #ff7518;
+    box-shadow: 0 0 25px rgba(255,117,24,0.3);
+}
+
+.imagen {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    color: #ffae42;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* HISTORIAS */
+
+.historia-texto {
+    background: #28163d;
+    border-left: 5px solid #ff7518;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 35px;
+    line-height: 1.8;
+    min-height: 70px;
+}
+
+/* LEYENDAS */
+
+.leyendas {
+    background: #1b1028;
+}
+
+/* CURIOSIDADES */
+
+.curiosidad {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    background: #28163d;
+    padding: 20px;
+    margin: 18px auto;
+    border-radius: 15px;
+    max-width: 800px;
+    border-left: 4px solid #ff7518;
+}
+
+.curiosidad span {
+    font-size: 40px;
+}
+
+.curiosidad p {
+    line-height: 1.7;
+}
+
+.curiosidad-extra {
+    color: #ffae42;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* JUEGO */
+
+.juego {
+    background: linear-gradient(135deg, #241033, #10091c);
+}
+
+.caja-juego {
+    max-width: 650px;
+    margin: 35px auto 0;
+    padding: 35px 20px;
+    background: #28163d;
+    border: 2px solid #ff7518;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,117,24,0.2);
+}
+
+.caja-juego h3 {
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.opciones {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.opciones button {
+    background: #45205e;
+    border: 1px solid #a020f0;
+}
+
+.opciones button:disabled {
+    cursor: default;
+    opacity: 0.9;
+    transform: none;
+}
+
+#resultado {
+    min-height: 35px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+#puntaje {
+    color: #ffae42;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* FINAL */
+
+.final {
+    padding: 70px 20px;
+    text-align: center;
+    background: #090510;
+}
+
+.final h2 {
+    font-family: 'Creepster', cursive;
+    font-size: 50px;
+    color: #ff7518;
+    margin-bottom: 20px;
+}
+
+.final p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.final span {
+    font-size: 40px;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    background: #05030a;
+    padding: 25px;
+    text-align: center;
+    color: #a99bb9;
+    line-height: 2;
+    border-top: 2px solid #ff7518;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes volar {
+    0% {
+        left: -150px;
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(80px);
+    }
+    100% {
+        left: 110%;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes nieblaMover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* RESPONSIVE: CELULARES */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .luna {
+        font-size: 55px;
+        top: 20px;
+        right: 5%;
+    }
+
+    .seccion {
+        padding: 60px 6%;
+    }
+
+    .seccion h2 {
+        font-size: 38px;
+    }
+
+    .final h2 {
+        font-size: 38px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
